@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test3.html</title>
+  <style>
+    .item{
+      width: 100px;
+      height: 100px;
+      border: 1px solid #000;
+      margin: 10px;
+    }
+
+    .container{
+      height: 100vh; /* view port 100%로 설정 */
+      display: flex; /* 플렉스 박스 설정알림 */
+      flex-direction: row;
+      /* 플렉스 박스의 배치
+      기본-행(row) ,row/column (행/열), row-reverse(역방향 행), column-reverse(역방향 열)*/
+      flex-flow: row nowrap; 
+      /* 컨테이너의 아이템들을 한 줄에 담을 수 없을 때 줄 바꿈 처리 유무를 결정 
+      nowrap(기본:줄바꿈X) wrap(줄바꿈) wrap-reverse(반대로 줄바꿈)
+      flex-direcrion: row; flex-wrap:wrap; */
+      /* 수평정렬 justify*/
+      justify-content: flex-start; 
+      /* 시작위치 기준 정렬(왼) */
+      /* justify-content: flex-end; 끝 기준 정렬(오른)*/
+      /* justify-content: center; 중앙 */
+      /* justify-content: space-between; 일정한 간격으로 맞추기*/
+      /* justify-content: space-around; 시작간격과 마지막 간격을 합친 것이 주 간격이다.*/
+
+      /* 수직정렬 align */
+      align-items: flex-start; /* 시작기준 정렬(위쪽 정렬) */
+      /* align-items: flex-end 마지막기준 정렬(아래쪽정렬)*/
+      /* align-items: center; 수직중앙정렬 */
+
+      /* 여러행정렬(align-content) - flex-wrap:wrap 상태로 설정돼 있고, 아이템들이 2행 이상 있을 때 수직축방향 정렬*/
+      align-content: flex-start;
+      /* align-content: flex-end; */
+      /* align-content: flex-center; */
+    } 
+      /* flex 아이템에 적용한느 속성들 */
+      /* 모든 아이템에 적용시  */
+      .item{
+        flex-basis: auto;  /*자동으로 크기 조정*/
+        /* flex-basis: 0; > 1글자 크기정도로 모두를 맞춰준다.*/
+        /* flex-basis: 30%; 전체 행 기준(100%)으로 30% 크기로 보여준다. */
+        /* flex-basis: 200px; 각각의 아이템을 200px 크기로 보여준다 */
+      }
+        /* 부분적으로 특정 아이템의 크기 조절 */
+        
+      .item:nth-child(4){
+        flex: 0;
+      }
+      .item:nth-child(5){
+        flex: 1;
+      }
+      .item:nth-child(6){
+        flex: 2;
+      }
+  </style>
+</head>
+<body>
+  <!-- flex는 flexible box, flexbox라고 부름
+    주로 레이아웃 배치전용으로 고안됨
+    float와 inline-block등의 불편한 점을 보강함
+  -->
+  <div class="container"> <!-- 플렉스 컨테이너라고 부른다. -->
+    <div class="item" style="background-color:#FA87F4">1. 안녕하세요</div> <!-- 플렉스 아이템이라고 부른다 -->
+    <div class="item" style="background-color:#C578DE">2. 안녕하세요</div> <!-- 플렉스 아이템이라고 부른다 -->
+    <div class="item" style="background-color:#C190F5">3. 안녕하세요</div> <!-- 플렉스 아이템이라고 부른다 -->
+    <div class="item" style="background-color:#8D78DE">4. 안녕하세요</div> <!-- 플렉스 아이템이라고 부른다 -->
+    <div class="item" style="background-color:#878EFA">5. 안녕하세요</div> <!-- 플렉스 아이템이라고 부른다 -->
+    <div class="item" style="background-color:#FFE38A">6. 안녕하세요</div> <!-- 플렉스 아이템이라고 부른다 -->
+    <div class="item" style="background-color:#DE8678">7. 안녕하세요</div> <!-- 플렉스 아이템이라고 부른다 -->
+    <div class="item" style="background-color:#C190F5">8. 안녕하세요</div> <!-- 플렉스 아이템이라고 부른다 -->
+    <div class="item" style="background-color:#78CADE">9. 안녕하세요</div> <!-- 플렉스 아이템이라고 부른다 -->
+    <div class="item" style="background-color:#B7FAA8">10. 안녕하세요</div> <!-- 플렉스 아이템이라고 부른다 -->
+  </div>
+</body>
+</html>

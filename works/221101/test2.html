@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test2.htm(반응형 사이트 - Responsive Web)</title>
+  <style>
+    /* css초기화 */
+    body{
+      margin: 0px;
+      padding: 0px;
+    }
+    div{
+      background-color: coral;
+      border: 2px solid #000;
+      font-size: 50pt;
+    }
+    div#area {
+      width: 800px;
+      height: 400px;
+      background-color: cornflowerblue;
+    }
+
+    #tbl{
+      width: 600px;
+      height: 400px;
+      /* 표 여백 없애기 */
+      border-collapse: collapse;
+    }
+    
+    #tbl td, #tbl th {
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+    /* 
+      screen width >= 800px (max-width<800px)
+      800이 넘으면 pc모드 작동
+      반응형 만들기
+    */
+    @media screen and (max-width :800px) {  
+      div{
+        background-color: rgb(144, 80, 255);
+        border: 2px solid #000;
+        font-size: 25pt;
+      }
+
+      div#area {
+        width: 400px;
+        height: 200px;
+        background-color: cornflowerblue;
+      }
+
+      #tbl{
+        width: 300px;
+        height: 200px;
+        /* 표 여백 없애기 */
+        border-collapse: collapse;
+      }
+    
+      #tbl td, #tbl th {
+        border: 1px solid #ccc;
+        text-align: center;
+      }
+    }
+
+    @media screen and (max-width:300px) {  
+      div{
+        background-color: rgba(71, 220, 12, 0.862);
+        border: 1px solid #000;
+        font-size: 10pt;
+      }
+
+      div#area {
+        width: 200px;
+        height: 100px;
+        background-color: cornflowerblue;
+      }
+
+      #tbl{
+        width: 150px;
+        height: 100px;
+        /* 표 여백 없애기 */
+        border-collapse: collapse;
+      }    
+    }
+  </style>
+</head>
+<body>
+  <h2>미디어 쿼리 연습</h2>
+  <p>반응형 사이트 - Responsive Web</p>
+  <hr/>
+  <div>이 곳은 반응형 웹 사이트를 위한 화면입니다.</div>
+  <hr/>
+  <div id="area"></div>
+  <hr/>
+  <table id="tbl">
+    <tr>
+      <th>주제</th>
+      <th>강사</th>
+      <th>장소</th>
+    </tr>
+    <tr>
+      <th>웹표준에 대해</th>
+      <th>홍길동</th>
+      <th>그린컴퓨터</th>
+    </tr>
+    <tr>
+      <th>웹프로그램에 대해</th>
+      <th>홍길동</th>
+      <th>그린컴퓨터</th>
+    </tr>
+  </table>
+</body>
+</html>

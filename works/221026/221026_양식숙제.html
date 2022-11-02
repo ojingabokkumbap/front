@@ -1,0 +1,52 @@
+<html>
+<head>
+  <title>221026_폼(양식)태그 연습 숙제</title>
+</head>
+<body>
+  <fieldset>
+    <legend>개인정보</legend>
+    <ul>
+        <label for="name">이름: </label>
+        <input type="text" name="name" id="name" placeholder="이름 입력."/><br/>
+        <label for="age">나이: </label>
+        <input type="age" name="age" id="age" placeholder="나이 입력."><br/>
+        <label for="text">전화: </label>
+        <input type="text" name="number" id="number" placeholder="전화번호 입력."><br/> 
+        <label for="password">비밀번호: </label>
+        <input type="password" name="pwd" id="pwd"><br/> 
+        <label for="file">파일: </label>
+        <input type="file" name="file" id="file"><br/> 
+        <label for="color">색상: </label>
+        <input type="color" name="color"/><br/>                                  
+        <label for="date">날짜: </label>
+        <input type="date" name="date" id="date"><br/> 
+        <label for="time">시간: </label>
+        <input type="time" name="time" id="time"><br/>             
+        <label for="datetime-local">날짜시간: </label>
+        <input type="time2" name="time2" id="time2"><br/>             
+        <label for="range">범위: </label>
+        <input type="range" name="range" id="range"><br/>             
+        <label for="gender">성별: </label>
+        <input type="radio" name="gender" id="gender"value="남자" checked/> 남자
+        <input type="radio" name="gender" id="gender2"value="여자"/> 여자 <br/>
+        <label for="hobby">취미: </label>
+        <input type="checkbox" name="hobby" id="hobby" value="축구"/> 축구            
+        <input type="checkbox" name="hobby" id="hobby" value="배구"/> 배구           
+        <input type="checkbox" name="hobby" id="hobby" value="야구"/> 야구           
+        <input type="checkbox" name="hobby" id="hobby" value="농구"/> 농구<br/>         
+        <p>거주지:
+        <select name="">
+          <option value = "청주">청주</option>
+          <option value = "청주">서울</option>
+          <option value = "청주">부산</option>
+          <option value = "청주">광주</option>
+        </select>  
+        </p>
+        <p>
+          자기소개:<br/>
+          <textarea rows="5" cols="50" name ="content" id="content"></textarea>
+        </p>
+    </ul>
+  </fieldset>
+</body>
+</html>
