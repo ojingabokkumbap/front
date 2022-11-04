@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>매개변수</title>
+  <script>
+    'use strict';
+
+    // 값을 변환시키지 않는 타입 const
+    const stringsu = '100';
+    const numbersu = 100;
+
+    function fcheck1(){
+      demo.innerText = "함수를 호출하셨습니다.";
+    }
+
+    function fcheck2(su1,su2){
+      demo.innerText = "su1 ="+su1+", su2= "+su2;
+    }
+
+    function fcheck3(){
+      demo.innerText = "stringsu ="+stringsu+", numbersu= "+ numbersu;
+      demo.innerText = "stringsu ="+typeof(stringsu) +", numbersu= "+ typeof(numbersu);
+      if(stringsu == numbersu){
+        demo.innerText="두 변수의 값은 같다"
+      }
+      else {
+        demo.innerText="두 변수의 값은 다르다"
+      }
+
+    function fcheck4(){
+      if(stringsu === numbersu){
+        // ===연산자 엄격한 타입비교
+        demo.innerText="두 변수의 타입은 같다"
+      }
+      else {
+        demo.innerText="두 변수의 타입은 다르다"
+      }
+    }
+  }
+  </script>
+</head>
+<body>
+  <h2>매개변수연습</h2>
+  <form name="myform">
+    <p><button type="button" onclick="fcheck1()">호출1</button></p>
+    <p><button type="button" onclick="fcheck2(10,20)">호출2</button></p>
+    <p><button type="button" onclick="fcheck3()">호출3(==연산자)</button></p>
+    <p><button type="button" onclick="fcheck4()">호출3(===연산자)</button></p>
+  </form>
+  <hr/>
+  <div id="demo"></div>
+</body>
+</html>

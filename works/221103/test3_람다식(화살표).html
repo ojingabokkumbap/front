@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arrow function</title>
+  <script>
+    'use strict'
+
+    // 익명함수 호출
+    let fcheck0 = function(){
+      alert("익명함수 호출");
+    }
+    
+    //arrow함수 호출
+    let fcheck1 = () => {
+      alert("arrow함수 호출");
+    }
+
+    let fcheck2 = () => alert("arrow함수 호출");
+  
+  </script>
+</head>
+<body>
+  <h2>Arrow Function</h2>
+  <p>
+    <input type="button" value="익명함수 호출1" onclick="fcheck0()"/>
+    <input type="button" value="arrow 함수 호출2" onclick="fcheck1()"/>
+    <input type="button" value="arrow 함수 호출2" onclick="fcheck2()"/>
+  </p>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>test20_checkbox</title>
+</head>
+<body>
+  <h2>checkbox연습</h2>
+  <form name="myform">
+    <p><b>취미 : </b><br/><br/>
+      <input type="checkbox" name ="hobby" id="hobby" value="등산"/>등산 &nbsp;
+      <input type="checkbox" name ="hobby" id="hobby" value="낚시"/>낚시 &nbsp;
+      <input type="checkbox" name ="hobby" id="hobby" value="볼링"/>볼링 &nbsp;
+      <input type="checkbox" name ="hobby" id="hobby" value="바둑"/>바둑 &nbsp;
+      <input type="checkbox" name ="hobby" id="hobby" value="수영"/>수영 &nbsp;
+      <button type="button" onclick="fcheck()">출력</button>
+    </p>
+  </form>
+  <hr/>
+  <div id="demo"></div>
+
+  <script>
+    'use strict'
+    let hobbycount= document.getElementsByName("hobby").length;
+    //i<document.getElementsByName("hobby").length ->길어서 변수로 빼기(전역변수로 설정)
+    
+    function fcheck(){
+      console.log("hobbycount :" + hobbycount);
+      let hobby=''; //누적하기 위한 변수 설정
+      for(let i=0; i<hobbycount; i++){
+        if(document.getElementsByName("hobby")[i].checked){
+          hobby += document.getElementsByName("hobby")[i].value + "/";
+        }
+      }
+      hobby = hobby.substring(0,hobby.length -1);
+      demo.innerHTML = hobby + "<input type='button' value='지우기' onclick='fclear()'/>";
+    }
+    
+    
+    function fclear(){
+      // let hobbycount= i<document.getElementsByName("hobby").length
+      for(let i=0; i<hobbycount; i++) {
+        document.getElementsByName("hobby")[i].checked = false;
+      }
+      demo.innerText ="";
+    }
+  </script>
+</body>
+</html>

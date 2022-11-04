@@ -8,35 +8,23 @@
   <script>
     'use strict';
 
-    function msg1() {
-      // let su1 = prompt("수1를 입력하세요?");
-      // su1 += 100;
-      // console.log("su1 : " + su1);
-      // document.write("<br/>su1 : ", su1);
-      let su2 = prompt("수2를 입력하세요?");
-      // let su3 = parseInt(su2) + 200;
-      let su3 = eval(su2) + 200;
-      console.log("su2 : " + su2);
-      console.log("su3 : " + su3);
-      document.write("<br/>su2 : ", su2);
-      document.write("<br/>su3 : ", su3);
-      let ans = confirm("작업을 계속하시겠습니까?");
-      document.write("<br/>ans : ", ans);
 
     function calc(){
       let su1 = myform.su1.value;
       let su2 = myform.su2.value;
+      
     }
-    }
+    
   </script>
 </head>
 <body>
   <form name ="myform" method="get" action="#">
     <p>입력창<input type="text" name="su1"></p>
     <p>결과창<input type="text" name="su2"></p>
-
-    <input type="button" value="계산" onclick="calc()"/>
-    <input type="reset" value="재계산"/>
+    <p>
+      <input type="button" value="계산" onclick="calc()"/>
+      <input type="reset" value="재계산"/>
+    </p>
   </form>
   </p>
 </body>

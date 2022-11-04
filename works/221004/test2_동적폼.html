@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>동적폼</title>
+  <script>
+    'use strict'
+    let newtext = "";
+    let idx="";
+
+    // 1. 입력폼 1개 추가하기
+    // function inputbox(){
+    //   let newText = '<input type ="text" name="product" id="product" />';
+    //   demo.innerHTML = newText;
+    // }
+    
+    // 2.클릭할 때마다 입력폼 추가
+    // function inputbox(){
+    //   newtext += '<input type ="text" name="product" id="product" /><br/>';
+    //   demo.innerHTML = newtext;
+    // }
+    
+    //3. 클릭할 때마다 입력폼 추가 (지우기 버튼추가버전)
+    // function inputbox(){
+    //   idx++;
+    //   newtext += idx + '.<input type ="text" name="product" id="product" /> &nbsp;';
+    //   newtext += "<input type = 'button' value='"+idx+".삭제' onclick = 'deletebox()'/><br/>"
+    //   demo.innerHTML = newtext;
+    // }
+
+    // 4. 클릭할 때마다 입력폼 추가 (지우기 버튼추가버전) : 각 textfeild마다 고유한 id를 지정한다.
+    function inputbox(){
+      idx++;
+      newtext +='<div id="protext'+idx+'">';
+        newtext += idx + '.<input type ="text" name="product" id='+idx+'"product" /> &nbsp;';
+        newtext += "<input type = 'button' value='"+idx+".삭제' onclick = 'deletebox("+idx+")'/><br/>";
+        newtext +='</div>'
+      demo.innerHTML = newtext;
+    }
+    // 5. 클릭할 때마다 입력폼 추가 (지우기 버튼추가버전) : 각 textfeild마다 고유한 id를 지정한다. (삭제 후 추가필드에 대한 처리)
+    // function inputbox(){
+    //   idx++;
+    //   newtext ='<div id="protext'+idx+'">';
+    //     newtext += idx + '.<input type ="text" name="product" id='+idx+'"product" /> &nbsp;';
+    //     newtext += "<input type = 'button' value='"+idx+".삭제' onclick = 'deletebox("+idx+")'/><br/>";
+    //     newtext +='</div>'
+    //   demo.innerHTML += newtext;
+    // }
+    //삭제버튼 클릭시 동적텍스트박스 삭제하기
+    function deletebox(idx){ //idx값 받아서 삭제
+      let protext = "protext" + idx;
+      let item = document.getElementById(protext); // ""가 없음 -> 변수명에 해당
+      item.parentNode.removeChild(item);
+    }
+    function reloadcheck(){
+      idx= '';
+      location.reload();
+    }
+    </script>
+</head>
+<body>
+  <h2>입력창 추가(동적폼)</h2>
+  <form name="myform">
+    <p>
+      <input type="button" value="입력 창 추가" onclick="inputbox()"/>
+      <input type="button" value="입력 창 모두제거" onclick="reloadcheck()"/>
+    </p>
+    <!-- 폼 안에 넣기 -->
+    <div id="demo"></div>
+  </form>
+</body>
+</html>

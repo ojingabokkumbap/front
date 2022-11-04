@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    'use strict';
+    function fcheck(){
+      let gender;
+      // if(document.getElementById("gender1").value == "남자"){
+      //   gender == "남자";
+      // }
+      // if(document.getElementById("gender2").value == "여자"){
+      //   gender="여자";
+      // }
+
+      if(document.getElementsByName("gender")[0].checked) gender = "남자";
+      if(document.getElementsByName("gender")[1].checked) gender = "여자";
+      // name으로 비교 -> 배열을 써서 사용할 수 있음 -> 반복문 사용가능
+      
+      demo.innerText = gender;
+      if(gender == '남자'){
+      demo.innerHTML = "<font color='chocolate'><b>"+gender+"</b></font>";
+      }
+      else{
+      demo.innerHTML = "<font color='pink'><b>"+gender+"</b></font>";
+      }
+
+    }
+  </script>
+</head>
+<body>
+  <h2>라디오 버튼값 체크하기</h2>
+  <form name="myform">
+    <div>
+      <input type="radio" name="gender" id="gender1" value ="남자" checked/> 남자
+      <input type="radio" name="gender" id="gender2" value ="여자"/> 여자
+      <input type="button" value="값 체크" onclick="fcheck()">
+    </div>
+  </form>
+  <hr/>
+  <div id="demo"></div>
+</body>
+</html>

@@ -7,22 +7,23 @@
   <title>test15.html</title>
   <script>
     'use strict'
- 
-    function input(){
-      let res = eval(document.myform.su1.value);
-      document.myform.res.value = res
+    function calc(){
+      let res = eval(myform.insert.value);
+      myform.result.value = res;
     }
- 
   </script>
 </head>
 <body>
-  <h2>계산기</h2>
+  <h2>계산</h2>
   <form name="myform" method="get" action="#">
-    <p>계산할 수식? <input type="text" name="su1" autofocus required/></p>
-    <p>결과? <input type="text" name="res"></p>
     <p>
-      <input type="button" value="계산" xxonclick="input()"/>
-      <input type="reset" value="재계산"/>
+      계산식 : <input type="text" name="insert" id="insert"/>
+    </p>
+    <p>
+      결과 : <input type="text" name="result" id="result" readonly/>
+    </p>
+    <p>
+      <input type="button" value="계산" xxonclick="calc()"/>
     </p>
   </form>
 </body>
