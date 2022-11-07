@@ -31,6 +31,7 @@
     // }
 
     // 4. 클릭할 때마다 입력폼 추가 (지우기 버튼추가버전) : 각 textfeild마다 고유한 id를 지정한다.
+    /*
     function inputbox(){
       idx++;
       newtext +='<div id="protext'+idx+'">';
@@ -39,15 +40,16 @@
         newtext +='</div>'
       demo.innerHTML = newtext;
     }
+    */
     // 5. 클릭할 때마다 입력폼 추가 (지우기 버튼추가버전) : 각 textfeild마다 고유한 id를 지정한다. (삭제 후 추가필드에 대한 처리)
-    // function inputbox(){
-    //   idx++;
-    //   newtext ='<div id="protext'+idx+'">';
-    //     newtext += idx + '.<input type ="text" name="product" id='+idx+'"product" /> &nbsp;';
-    //     newtext += "<input type = 'button' value='"+idx+".삭제' onclick = 'deletebox("+idx+")'/><br/>";
-    //     newtext +='</div>'
-    //   demo.innerHTML += newtext;
-    // }
+    function inputbox(){
+      idx++;
+      newtext ='<div id="protext'+idx+'">';
+      newtext += idx + '.<input type ="text" name="product" id='+idx+'"product" /> &nbsp;';
+      newtext += "<input type = 'button' value='"+idx+".삭제' onclick = 'deletebox("+idx+")'/><br/>";
+      newtext +='</div>'
+      demo.innerHTML += newtext;
+    }
     //삭제버튼 클릭시 동적텍스트박스 삭제하기
     function deletebox(idx){ //idx값 받아서 삭제
       let protext = "protext" + idx;
