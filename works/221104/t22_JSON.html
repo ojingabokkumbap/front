@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>그림 속성연습</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+    // let json1 = JSON.stringify(['사과','바나나']);
+    // console.log(json);
+
+    const member = {
+      name: '홍길동',
+      age : 25,
+      color : 'red',
+      birth : new Date(),
+      atom: () => {
+        console.log("성명은 " + member.name);
+      }
+    }
+
+    let json = JSON.stringify(member); //오브젝트를 제이슨으로 변환
+    console.log(json);
+    const obj= JSON.parse(json); //스트링으로 만든 JSON을 다시 Object로 변환한다(parse)
+    // console.log(obj);
+    console.log(member.atom());
+    
+  </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <h2>웹을 통한 값의 전달방식</h2>
+  <pre>
+    HTTP란 ? server과 client사이의 Text들을 Tranfer해주는 통신을 정의한 Protocol
+    HTTP : Hyper Text Transfer Protocol
+    client가 server에 요청(reponse)
+    server가 client에 요청(request)
+
+    client가 server에 요청에서 응답 받아올 때
+    비동기식을 통해서 값들을 받아오는 방식을 AJax라고 한다.
+
+    -AJAX : Asynchronous JavaScript And XML
+    -XML : HTML과 같은 마크업 언어이다. 서버와 데이터를 주고받을 때 사용되는 대표적인 언어로
+          동기화 된 자료를 전송하게 된다. 이 때 XML은 불필요한 태그가 많이 전송되기에 가독성이 떨어짐
+          요새는 많이 사용하고 있지 않음
+    -JSON : JavaScript Object Notation 으로 서버와의 전송에 필요한 데이터 포멧을 말한다.
+          JSON방식은 모바일에서의 서버와 데이터 전송에도 주로 사용되고 있으며,
+          프로그램의 종류나 플랫폼에 상관없이 사용할 수 있다. (예 : C, C+ , C++, Java, Python , PHP ,코틀린, GO언어..)
+          자바스크립트에서는 객체와 같이 '키(key):값(value)'으로 구성되어 처리한다.
+          처리방식은 Object를 String으로 직렬화(deserialize)해서 다시 object로 변환해서 사용하게한다.
+      예) 논리값을 JSON을 이용해 스트링으로 변환
+        let json = JSON.stringify(true);
+        console.log(json); => 결과 'true'
+      예2) 배열을 JSON을 이용해 스트링으로 변환
+        let json = JSON.stringify(['사과','바나나']);
+        console.log(json); => 결과 ["사과","바나나"])
+      예3) Object를 JSON을 이용해 스트링으로 변환
+        
+
+  </p>
+  <hr/>
+  <div id="demo"><img src=""></div>
+</div>
+<p><br/></p>
+</body>
+</html>

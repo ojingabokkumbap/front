@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>새창에 값 넘기기</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+
+    function idcheck(){
+      let url = "t16_child.html";
+      let wname = "t16";
+      let opt="width=500px , height=400px, left=300px , top=200px";
+      let mid = document.getElementById("mid").value;
+      
+      if(mid.trim() == "") {
+        alert("아이디란이 공백입니다.");
+        document.getElementById("mid").focus();
+        return false;
+      }
+      
+      newwindow = window.open(url,wname,opt);
+    }
+    function childclose(){
+      // window.close();  현재 창이 닫혀서 쓰면 안 됨
+      newwindow.close(); //자식 창 닫기
+    }
+  </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <h2>새창에 값 넘기기 (이 곳은 부모창입니다.)</h2>
+  <form name="myform">
+    <p>
+      아이디 : <input type="text" name="mid" id="mid" autofocus required/>
+      <input type="button" value="아이디 중복 체크" onclick="idcheck()"/>
+    </p>
+    <p>
+      비밀번호 : <input type="password" name="pwd" id="pwd" required/>
+    <p>
+      <input type="button" value="자식 창 닫기" onclick="childclose()"/>
+    </p>
+    </p>
+  </form>
+  <p>
+  </p>
+  <hr/>
+  <div id="demo"></div>
+</div>
+<p><br/></p>
+</body>
+</html>

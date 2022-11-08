@@ -4,41 +4,44 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>setTimeout</title>
+  <title>그림 속성연습</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     'use strict';
-    let num=0;
-    //누적 받기위해 전역변수에 올려놓기
+    let statusTime;
     
-    function plus(){
-      num++;
-      demo.innerHTML = "1 증가";
-      setInterval(1000);
-      demo.innerHTML = "<b>" + num + "</b>";
+    function clock(){
+      let today = new Date();
+      let hh = today.getHours();
+      let mm = today.getMinutes();
+      let ss = today.getSeconds();
+      demo.innerHTML = hh + " 시 " + mm + " 분 " + ss + " 초 ";
     }
     
-    function minus(){
-      num--;
-      demo.innerHTML = "1 감소";
-      setInterval(1/1000);
-      demo.innerHTML = "<b>" + num + "</b>";
+    function wow(){
+      clock();
+      statusTime = setInterval(clock,1000);
     }
+
+    function wowb(){
+      clearInterval(statusTime);
+    }
+
   </script>
 </head>
 <body>
 <p><br/></p>
 <div class="container">
-  <h2>setTimeout 함수</h2>
+  <h2>인터넷 시계</h2>
   <p>
-    <input type="button" value="증가" onclick="plus()"/>
-    <input type="button" value="감소" onclick="minus()"/>
+    <input type="button" value="동작" onclick="wow()" class="btn btn-secondary"/>
+    <input type="button" value="정지" onclikc="wowb()" class="btn btn-danger"/>
   </p>
   <hr/>
-  <div id="demo">0</div>
+  <div id="demo"><img src=""></div>
 </div>
 <p><br/></p>
 </body>

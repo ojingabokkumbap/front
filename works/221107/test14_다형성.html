@@ -23,7 +23,6 @@
       getArea() {
         return this.width * this.height;
       }
-
     }
 
     // 1.부모클래스를 통해서 사각형의 면적을 구해보자.
@@ -32,9 +31,9 @@
     console.log("부모의 사각형의 면적은? " + area);
 
     // 2.상속을 통한 사각형의 면적 구하기
-    class ChildShape1 extends Shape {}
-    let childShape = new Shape(10,20);
-    area = shape.getArea();
+    class ChildShape1 extends Shape {} //부모 거 다 씀
+    let childShape1 = new ChildShape1(10,20);
+    area = childshape1.getArea();
     console.log("자식을 통한 부모의 사각형의 면적은? " + area);
 
     // 3.삼각형의 면적구하기(단, 부모객체의 area()메소드를 사용하고자 한다.)
@@ -44,7 +43,6 @@
         return (this.width * this.height) / 2;
       }
     }
-
     let childShape2 = new ChildShape2(10,30);
     area = childShape2.getArea();
     console.log("삼각형의 면적 : " + area);
