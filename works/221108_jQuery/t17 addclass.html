@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>addcalss</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+
+    $(function(){
+      $('#google').addClass('userhover');
+      $('#google').removeClass('userhover');
+
+      // $('#menu2 button').mouseenter(function(){
+      //   $(this).addClass('userhover');
+      // });
+      // $('#menu2 button').mouseleave(function(){
+      //   $(this).removeClass('userhover');
+      // });
+        
+      $('#menu2 button').mouseenter(function(){
+        $(this).addClass('userhover');
+      })
+      .mouseleave(function(){
+        $(this).removeClass('userhover');
+      });
+      
+      //그림에 마우스를 올리면 다른 그림으로 변경처리..
+      $('#img1 img').mouseenter(function(){
+        $(this).attr({'src':'https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fcomicthumb-phinf.pstatic.net%2F20210730_276%2Fpocket_1627613694939781YL_JPEG%2F_%25284%2529.jpg%3Ftype%3Dm256%22&type=nf240_344','width':'150px'})
+        .mouseleave(function(){
+          $(this).attr({'src':'https://s.pstatic.net/dthumb.phinf/?src=%22https%3A%2F%2Fcomicthumb-phinf.pstatic.net%2F20220908_67%2Fpocket_1662596104527cWArL_JPEG%2Fcover.jpg%3Ftype%3Dm256%22&type=nf240_344'});
+        });
+      });
+
+      $('#logo1 span').mouseenter(function(){
+        $(this).html('<font color=blue><b>그린컴퓨터</b></font>');
+      })
+      .mouseleave(function(){
+        $(this).text('Green Computer');
+      });
+    });
+
+  </script>
+</head>
+<style>
+  div#menu1 {
+    margin: 5px;
+    border: 1px solid gray;
+    padding: 5px;
+    width: 120px;
+    text-align: center;
+  }
+  button.default{
+    margin: 2px;
+    border: 1px solid gray;
+    width: 100px;
+    text-align: center;
+    background-color: violet;
+    color: darkblue;
+  }
+
+  #menu1 > button:hover {
+    background-color: darkblue;
+    color: violet;
+  }
+  
+  .userhover{
+    background-color: skyblue;
+    color: deeppink;
+
+  }
+</style>
+<body>
+<p><br/></p>
+<div class="container">
+  <h2 id="google">Google</h2>
+  <div id="menu1">
+    <button class="default">회사소개</button>
+    <button class="default">CEO소개</button>
+    <button class="default">사업영역</button>
+    <button class="default">제품소개</button>
+  </div>
+  <hr/>
+  <h2 id="google">Google2</h2>
+  <div id="menu2">
+    <button class="default2">회사소개</button>
+    <button class="default2">CEO소개</button>
+    <button class="default2">사업영역</button>
+    <button class="default2">제품소개</button>
+  </div>
+  <hr/>
+  <div id="img1">
+    <img src="../../images/케넨.png" width="150px" title="코난"/>
+  </div>
+  <hr/>
+  <div id="logo1">
+    <span>Green Computer</span>
+  </div>
+</div>
+
+<p><br/></p>
+</body>
+</html>

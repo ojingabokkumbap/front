@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>is/not</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+    //filter를 이용한 짝수행에 적용하기
+    $(function(){
+      $('.container div').css('color','skyblue')
+        .filter(function(i,item){
+          return i % 2 == 0;
+        }).css('color','brown')
+        .filter('.cc').css('fontSize','30pt')
+        
+        //is()메소드
+        $('#two div').css('color','gray')
+        .filter(function(i,item){
+          return i % 2 == 0;
+        }).css('color','red').filter('.cc')
+        // .filter(function(i,item){
+        //   return $(item).is('.cc')
+        .css('fontSize','25pt');
+
+        //not()메소드
+        $('#three div').css('color','coral')
+          .not('.cc').css('fontSize','8px');
+    });
+  </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <div id="one">
+  <div><h2>진달래 꽃1</h2></div>
+  <div><p>작가 : 김소월</p></div>
+  <div id="a">1연</div>
+  <div>나보기가<span class="test"> 역겨워 </span> 가실 때에는</div>
+  <div>말 없이 고이 보내드리오리다.</div>
+  <div id="a">2연</div>
+  <div class="cc">영변에 약산 진달래꽃</div>
+  <div class ="test2 main">아름따다 <h4>가실 길에</h4> 뿌리오리다.</div>
+  <div id="a">3연</div>
+  <div id="b">가시는 거름거름 놓인 그 꽃을</div>
+  <div>사뿐히 <span class="test"> 즈려밟고 </span> 가시옵소서</div>
+  <div id="a">4연</div>
+  <div>나보기가 <span class="main"> 역겨워 </span> 가실 때에는</div>
+  <div><span id="a">죽어도</span> <span class="test test3"> 아니 눈물 </span> 흘리오리다.</div>
+  <div>End</div>
+</div>
+  <hr/>
+  <div id="two">
+    <h2>진달래 꽃2</h2>
+    <p>작가 : 김소월</p>
+  <div id="a">1연</div>
+  <div>나보기가<span class="test"> 역겨워 </span> 가실 때에는</div>
+  <div>말 없이 고이 보내드리오리다.</div>
+  <div id="a">2연</div>
+  <div class="cc">영변에 약산 진달래꽃</div>
+  <div class ="test2 main">아름따다 <h4>가실 길에</h4> 뿌리오리다.</div>
+  <div id="a">3연</div>
+  <div id="b">가시는 거름거름 놓인 그 꽃을</div>
+  <div>사뿐히 <span class="test"> 즈려밟고 </span> 가시옵소서</div>
+  <div id="a">4연</div>
+  <div>나보기가 <span class="main"> 역겨워 </span> 가실 때에는</div>
+  <div><span id="a">죽어도</span> <span class="test test3"> 아니 눈물 </span> 흘리오리다.</div>
+  <div>End</div>
+</div>
+<hr/>
+<div id="three">
+  <h2>진달래 꽃3</h2>
+  <p>작가 : 김소월</p>
+  <div id="a">1연</div>
+  <div>나보기가<span class="test"> 역겨워 </span> 가실 때에는</div>
+  <div>말 없이 고이 보내드리오리다.</div>
+  <div id="a">2연</div>
+  <div class="cc">영변에 약산 진달래꽃</div>
+  <div class ="test2 main">아름따다 <h4>가실 길에</h4> 뿌리오리다.</div>
+  <div id="a">3연</div>
+  <div id="b">가시는 거름거름 놓인 그 꽃을</div>
+  <div>사뿐히 <span class="test"> 즈려밟고 </span> 가시옵소서</div>
+  <div id="a">4연</div>
+  <div>나보기가 <span class="main"> 역겨워 </span> 가실 때에는</div>
+  <div><span id="a">죽어도</span> <span class="test test3"> 아니 눈물 </span> 흘리오리다.</div>
+  <div>End</div>
+  </div>
+  <hr/>
+  <div id="demo"><img src=""></div>
+</div>
+<p><br/></p>
+</body>
+</html>

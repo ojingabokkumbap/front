@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>그림 속성연습</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+    $(document).ready(function(){
+      let show = $('.container > div:visible');
+      console.log(show);
+
+      let showArray = []; //배열선언
+      for(let i=0; i<show.length; i++){
+        // showArray.push(show[i].innerHTML);
+        showArray.push($(show[i]).html());
+      }
+      console.log(showArray);
+      console.clear();
+
+      $('#demo div:first').html(showArray);
+
+      //mpa문을 이용한 처리
+      // $('.container > div: hidden').map(function(i,item){
+      //   console.log(item);
+      // });
+      
+      //map을 사용해 값을 읽어올 때는 get()메소드를 사용한다.
+      let hiddenArray = $('.container > div:hidden').map(function(i,item){
+        // console.log(item);
+        return $(item).html();
+      }).get().join('/');
+      // console.log(hiddenArray); 
+      
+      $('#demo div:last').text('<br/>'+hiddenArray);
+  });
+  </script>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <h2>애국가</h2>
+  <div style="opacity: 0.2">동해물과</div> 
+  <!-- opacity의 값 : 0~1 , 0은 투명 1은 불투명 -->
+  <div style="display: none;">백두산이</div>
+  <!-- display:none 완전히 사라짐 -->
+  <div>마르고닳도록</div>
+  <div style="visibility: hideen;">하느님이</div>
+  <!--visibility: hideen : 화면에서는 보여지지 않지만 영역은 존재함  -->
+  <div style="overflow : hidden;">보우하사(레이어블록에서 글자가 넘칠 때 처리)</div>
+  <div style="overflow : hidden; width: 0px; height:0px">우리나라만세</div>
+  <!-- 공간이 부족해서 화면에 보이지 않는다 -->
+  <div style="display: none;">무궁화</div>
+  <div>삼천리</div>
+  <div>화려강산</div>
+  <hr/>
+  <div id="demo"><img src=""></div>
+    <div>대한사람 대한으로</div>
+    <div>길이 보전하세</div>
+</div>
+<p><br/></p>
+</body>
+</html>

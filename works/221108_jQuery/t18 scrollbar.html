@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>그림 속성연습</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    'use strict';
+    $(function(){
+      let boxheight =$('#intro').height();
+      let scrollheight =$('#intro').prop('scrollHegiht'); //attr 속성 prop
+      // let scrollTop = $('#intro').scrollTop();
+      console.log(boxheight);
+      console.log(scrollheight);
+      // console.log(scrollTop);
+
+      let chai = scrollheight - boxheight;
+
+      $('#intro').scrollTop(chai);
+    });  
+  </script>
+  <style>
+    #intro{
+      width: 250px;
+      height: 200px;
+      color : white;
+      padding: 10px;
+      border: 1px solid gold;
+      background-color: darkblue;
+      overflow: auto;
+    }
+  </style>
+</head>
+<body>
+<p><br/></p>
+<div class="container">
+  <div><input type="button" value="영역의 끝으로 이동" id="btnEnd" class="btn btn-success form-control"/></div>
+  <h2>자기소개</h2>
+  <div id="intro">
+    <div>1자기소개작성</div>
+    <div>2자기소개작성</div>
+    <div>3자기소개작성</div>
+    <div>4자기소개작성</div>
+    <div>5자기소개작성</div>
+    <div>6자기소개작성</div>
+    <div>7자기소개작성</div>
+    <div>8자기소개작성</div>
+    <div>9자기소개작성</div>
+    <div>10자기소개작성</div>
+    <div>12자기소개작성</div>
+    <div>13자기소개작성</div>
+    <div>14자기소개작성</div>
+    <div>15자기소개작성</div>
+    <div>16자기소개작성</div>
+    <div>17자기소개작성</div>
+    <div>18자기소개작성</div>
+    <div>19자기소개작성</div>
+    <div>20자기소개작성</div>
+  </div>
+  <p>
+  </p>
+  <hr/>
+  <div id="demo"><img src=""></div>
+</div>
+<p><br/></p>
+</body>
+</html>
