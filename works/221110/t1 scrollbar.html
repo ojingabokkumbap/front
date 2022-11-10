@@ -11,18 +11,29 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
   <script>
     'use strict';
+
+    let chai;
+
+    
     $(function(){
-      let boxheight =$('#intro').height();
-      let scrollheight =$('#intro').prop('scrollHegiht'); //attr 속성 prop
-      // let scrollTop = $('#intro').scrollTop();
-      console.log(boxheight);
-      console.log(scrollheight);
-      // console.log(scrollTop);
+      let boxHeight = $('#intro').height();
+      let scrollHeight = $('#intro').prop('scrollHeight'); //attr 속성 prop
+      console.log(boxHeight);
+      console.log(scrollHeight);
 
-      let chai = scrollheight - boxheight;
+      let chai = scrollHeight - boxHeight; 
+      $('#intro').scrollTop(chai); //스크롤 맨 밑으로 내리기
 
-      $('#intro').scrollTop(chai);
-    });  
+      $('#btnEnd').click(function(){
+        $('#intro').scrollTop(chai);
+      })
+
+    });
+
+    function lastcheck(){
+      alert("lastcheck()함수를 호출하셨습니다.")
+    }
+    
   </script>
   <style>
     #intro{
@@ -39,7 +50,7 @@
 <body>
 <p><br/></p>
 <div class="container">
-  <div><input type="button" value="영역의 끝으로 이동" id="btnEnd" class="btn btn-success form-control"/></div>
+  <div><input type="button" value="영역의 끝으로 이동" id="btnEnd" onclick="lastcheck()" class="btn btn-success form-control"/></div>
   <h2>자기소개</h2>
   <div id="intro">
     <div>1자기소개작성</div>

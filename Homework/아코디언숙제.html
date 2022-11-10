@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>basic</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script>
+    'use strict';
+    $(function(){
+      $('#acc > .sub').hide(); 
+
+      // 메뉴에 마우스를 over시키면 부메뉴만 열린다.
+      $('#acc > .menu').hover(function(){
+        $(this).next().stop().show(300);
+        $(this).prev().stop().hide(200);
+      });
+
+      // 닫기 기능 추가(마지막 주메뉴에서 마지막 주메뉴의 전으로 올라올때 부메뉴들 감추기)
+      $('div.menu3').hover(function(){
+        $('div.content4').stop().hide(200);
+      });
+      $('div.menu2').hover(function(){
+        $('div.content3').stop().hide(200);
+      });
+      $('div.menu1').hover(function(){
+        $('div.content2').stop().hide(200);
+      });
+
+      // 타이틀을 누르면 부메뉴를 닫히게한다.
+      $('#title').click(function(){
+        $('#acc > .content').hide();
+      });
+    });
+    
+  
+
+
+  </script>
+  <style>
+  /* Style the side navigation */
+  div.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(14, 51, 98);
+    overflow-x: hidden;
+  }
+  
+  div.menu{
+    text-align: center;
+    padding: 5px;
+    background-color:  rgb(14, 51, 98);
+    color: wheat;
+    margin-top: 20px;
+  }
+  div.sub {
+    /* border: 1px solid white; */
+    background-color: rgb(235, 243, 235);
+    color: rgb(0, 0, 0);
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    top: 100;
+  }
+  
+  /* Side navigation links */
+  /* .sidenav a {
+    color: white;
+    padding: 16px;
+  } */
+  
+  /* Change color on hover */
+  .sub a {
+    color:black;
+    margin-top: 10px;
+  }
+  
+  
+  /* Style the content */
+  .content {
+    text-align: center;
+    /* margin-left: 400px; */
+    padding-left: 20px;
+    background-color: rgb(220, 148, 40);
+  }
+  </style>
+  </head>
+  <body>
+  <div class="sidenav" id="acc">
+    <div class="menu menu1">이미지</div>
+    <div class="sub sub1">
+    <a href="#">내용</a><br/>
+    <a href="#">내용</a><br/>
+    <a href="#">내용</a><br/>
+  </div>
+    <div class="menu menu2">VIEW</div>
+    <div class="sub sub2">
+    <a href="#">내용</a><br/>
+    <a href="#">내용</a><br/>
+    <a href="#">내용</a><br/>
+  </div>
+    <div class="menu menu2">동영상</div>
+    <div class="sub sub3">
+    <a href="#">내용</a><br/>
+    <a href="#">내용</a><br/>
+    <a href="#">내용</a><br/>
+  </div>
+  </div>
+  <div class="content">
+    <br/>
+    <h1><b>쿼 카</b></h1>
+    <div>Quokka | 短尾矮袋鼠 | クアッカワラビー</div>
+    <hr/>
+    <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMjA1MTRfMjQz%2FMDAxNjUyNDg2MjAzNTI0.XnfWNVjXZJW94--6PLPW6kGXo-t9I97h2BYJfwmLL84g.d2s1LEmToqsvFu16QRa7LdV7xw5yIGC5tu7BXZja-Hcg.JPEG.moonz%2Fmaxresdefault.jpg&type=sc960_832"><br/>
+    <div>
+      <br/>
+      <div>마치 웃는 듯한 귀여운 외모와 사람을 두려워하지 않는 성격으로 인터넷상에서 큰 인기를 끌었다.</div>
+      <div>'세계에서 가장 행복한 동물'로 알려졌으며 호주인들의 인스타그램을 중심으로 쿼카와 셀카를 찍는 것이 유행하고 있다고 한다. </div>
+      <div>쿼카 입장에서도, 인간들이 과거 다른 동물을 상대로 할 때처럼 사냥하는 것도 아니고 먹을 것을 주며 보호해 주니 적대할 이유가 없기도 하다.</div>
+      <div>2015년 4월에는 로트네스트 섬을 방문한 프랑스 관광객 2명이 쿼카를 산 채로 불에 태우는 끔찍한 만행을 저지른 적이 있다.</div>
+      <div>다행히 해당 쿼카는 살아남았지만 화상 부위가 그대로 드러나게 되었으며, 이 두 관광객에게는 호주 돈으로 4,000 달러의 벌금이 부과되었고 자국에서 온갖 비난을 들었다. 관련 기사.</div>
+      <div>이 사건은 JTBC 예능 프로인 비정상회담 49화에서도 언급된 바 있다.</div>
+    </div>
+  </div>
+  </body>
+  </html>
+  
